@@ -1,17 +1,21 @@
 PROG = gtk-test
 OBJS = $(PROG).o
+
+DOC = html
+
+CC = gcc
 CFLAGS = $(shell pkg-config --cflags gtk4)
 LIBS = $(shell pkg-config --libs gtk4)
-CC = gcc
-T1 = $(CFLAGS)
-T2 = $(LIBS)
 
 
-all : $(PROG)
+all : $(PROG) $(DOC)
 
 
 $(PROG) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(PROG) $(LIBS)
+
+$(DOC) : Doxyfile *.c
+	doxygen
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< $(LIBS)
@@ -19,3 +23,4 @@ $(PROG) : $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(PROG)
+	rm -rf $(DOC)
