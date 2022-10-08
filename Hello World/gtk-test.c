@@ -1,7 +1,7 @@
 /**
  * @file
  * @brief This is the code for testing the Hello World of the GTK framework.
- * 	  Uses the code found at: https://www.gtk.org/docs/getting-started/hello-world/
+ * 	  Uses the code found at: https://www.gtk.org/docs/getting-started/hello-world/.
  */
  
 
@@ -10,8 +10,9 @@
 
 /**
  * Simply prints "Hello World" to standard output.
+ *
  * Contains two different new ways to print. Not sure how the "gprint" option differs from the "printf" option just yet.
- * @param[in] widet Not sure what this does.
+ * @param[in] widget Not sure what this does.
  * @param[in] data Not sure what this does.
  */
 static void print_hello(GtkWidget* widget, gpointer data)
@@ -26,6 +27,7 @@ static void print_hello(GtkWidget* widget, gpointer data)
 
 /**
  * The activation code.
+ *
  * This code takes a GtkApplication to create a window and populate it with a button that prints "Hello World" when clicked.
  * @param[in] app GtkApplication* that points to the app to attach to.
  * @param[in] user_data No idea what this does, but here we are.
@@ -49,6 +51,7 @@ static void activate(GtkApplication* app, gpointer user_data)
 
 /**
  * The main method.
+ *
  * Initializes the GTK application, runs it, and exits after it is completed.
  * @param[in] argc The number of command-line arguments passed.
  * @param[in] argv The command-line arguments passed.
